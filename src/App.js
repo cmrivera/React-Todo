@@ -1,7 +1,7 @@
 import React from "react";
 import TodoFormComponent from "./components/TodoForm";
 import Todos from "./components/TodoList";
-
+import "./components/Todo.css";
 const todos = [
   {
     id: 1,
@@ -68,8 +68,7 @@ class App extends React.Component {
   };
   render() {
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
+      <div className="App">
         <div>
           <Todos
             todos={this.state.todos}
@@ -77,7 +76,8 @@ class App extends React.Component {
             clearTodo={this.clearTodo}
           />
         </div>
-        <div>
+        <div className="footer">
+          <h1>Chris's React Todo App!</h1>
           <TodoFormComponent addTodo={this.addTodo} />
         </div>
       </div>
