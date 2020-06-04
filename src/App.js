@@ -20,6 +20,11 @@ class App extends React.Component {
           title: "Second Todo",
           completed: false,
         },
+        {
+          id: 3,
+          title: "Third Todo",
+          completed: false,
+        },
       ],
     };
   }
