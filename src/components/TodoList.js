@@ -15,6 +15,10 @@ const Todos = (props) => {
           toggleItem={props.toggleItem}
         />
       ))}
+      <button className="btn" onClick={props.clearTodo}>
+        {" "}
+        Clear Completed Todos
+      </button>
     </div>
   );
 };
