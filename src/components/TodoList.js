@@ -3,20 +3,20 @@
 import React from "react";
 import TodoItem from "./Todo";
 
-class Todos extends React.Component {
-  render() {
-    return (
-      <div>
-        {this.props.todos.map((todo) => (
-          <TodoItem
-            key={todo.id}
-            todo={todo}
-            handleChange={this.props.handleChange}
-            deleteTodo={this.props.deleteTodo}
-          />
-        ))}
-      </div>
-    );
-  }
-}
+const Todos = (props) => {
+  return (
+    <div>
+      {props.todos.map((todo) => (
+        <TodoItem
+          key={todo.id}
+          todo={todo}
+          //handleChange={this.props.handleChange}
+          //deleteTodo={this.props.deleteTodo}
+          toggleItem={props.toggleItem}
+        />
+      ))}
+    </div>
+  );
+};
+
 export default Todos;
