@@ -28,13 +28,35 @@ class App extends React.Component {
       ],
     };
   }
-
+  handleChange = (id) => {
+    this.setState({
+      todos: this.state.todos.map((todo) => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      }),
+    });
+  };
+  deleteTodo = (id) => {
+    this.setState({
+      todos: [
+        ...this.state.todos.filter((todo) => {
+          return todo.id !== id;
+        }),
+      ],
+    });
+  };
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <div>
-          <Todos todos={this.state.todos} />
+          <Todos
+            todos={this.state.todos}
+            handleChange={this.handleChange}
+            deleteTodo={this.deleteTodo}
+          />
         </div>
         <TodoFormComponent />
       </div>
